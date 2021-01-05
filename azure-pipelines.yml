@@ -9,7 +9,7 @@ pool:
 
 variables:
 - name: artifact
-  value: '$(Build.ArtifactStagingDirectory)/foo_listenbrainz-$(Build.BuildNumber).fb2k-component'
+  value: '$(Build.ArtifactStagingDirectory)/foo_listenbrainz.fb2k-component'
 
 steps:
 - checkout: self
@@ -50,7 +50,8 @@ steps:
     gitHubConnection: github
     repositoryName: medvid/foo_listenbrainz
     tagSource: manual
-    tag: $(Build.BuildNumber)
+    tag: '$(Build.BuildNumber)'
+    title: '$(Build.BuildNumber)'
     isDraft: true
     assets: |
-      $(artifact)
+      '$(artifact)'
