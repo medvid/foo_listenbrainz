@@ -5,6 +5,9 @@ pool:
   vmImage: 'vs2017-win2016'
 
 steps:
+- checkout: self
+  submodules: true
+
 - task: MSBuild@1
   inputs:
     solution: 'foo_listenbrainz.sln'
