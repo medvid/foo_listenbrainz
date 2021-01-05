@@ -6,7 +6,7 @@ pool:
 
 steps:
 - checkout: self
-  submodules: true
+  submodules: recursive
 
 - task: MSBuild@1
   inputs:
