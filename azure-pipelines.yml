@@ -1,5 +1,3 @@
-name: foo_listenbrainz_$(Build.BuildId)
-
 trigger:
 - master
 
@@ -35,7 +33,7 @@ steps:
 - task: GitHubRelease@0
   inputs:
     gitHubConnection: medvid
-    repositoryName: '$(Build.Repository.Name)' 
+    repositoryName: medvid/foo_listenbrainz
     tagSource: manual
     tag: $(Build.BuildNumber)
     assets: |
