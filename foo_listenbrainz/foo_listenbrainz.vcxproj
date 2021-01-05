@@ -15,8 +15,8 @@
     <ProjectGuid>{95C8AB42-DB6C-4B30-81EB-35BC2E5CDCD6}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>foolistenbrainz</RootNamespace>
-    <WindowsTargetPlatformVersion>7.0</WindowsTargetPlatformVersion>
     <UserComponentsDir>$(APPDATA)\foobar2000\user-components</UserComponentsDir>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
