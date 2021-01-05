@@ -1,8 +1,15 @@
 trigger:
 - master
 
+pr:
+- master
+
 pool:
   vmImage: 'vs2017-win2016'
+
+variables:
+- name: artifact
+  value: '$(Build.ArtifactStagingDirectory)/foo_listenbrainz-$(Build.BuildNumber).fb2k-component'
 
 steps:
 - checkout: self
@@ -27,20 +34,23 @@ steps:
     rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/Release'
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/foo_listenbrainz.fb2k-component'
+    archiveFile: '$(artifact)'
     replaceExistingArchive: true 
 
 - task: PublishPipelineArtifact@1
   displayName: 'Publish artifact'
   inputs:
-    TargetPath: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: foo_listenbrainz.fb2k-component
+    TargetPath: '$(artifact)'
+    ArtifactName: Release
 
 - task: GitHubRelease@0
+  displayName: 'GitHub release'
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
   inputs:
     gitHubConnection: github
     repositoryName: medvid/foo_listenbrainz
     tagSource: manual
     tag: $(Build.BuildNumber)
+    isDraft: true
     assets: |
-      $(Build.ArtifactStagingDirectory)/foo_listenbrainz.fb2k-component
+      $(artifact)
