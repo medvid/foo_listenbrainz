@@ -21,8 +21,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foobar2000_sdk_helpers", "v
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foobar2000_SDK", "vendor\foobar2000_sdk\foobar2000\SDK\foobar2000_SDK.vcxproj", "{E8091321-D79D-4575-86EF-064EA1A4A20D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "foo_sample", "vendor\foobar2000_sdk\foobar2000\foo_sample\foo_sample.vcxproj", "{85FBFD09-0099-4FE9-9DB6-78DB6F60F817}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug FB2K|x86 = Debug FB2K|x86
@@ -87,14 +85,6 @@ Global
 		{E8091321-D79D-4575-86EF-064EA1A4A20D}.Release FB2K|x86.Build.0 = Release|Win32
 		{E8091321-D79D-4575-86EF-064EA1A4A20D}.Release|x86.ActiveCfg = Release|Win32
 		{E8091321-D79D-4575-86EF-064EA1A4A20D}.Release|x86.Build.0 = Release|Win32
-		{85FBFD09-0099-4FE9-9DB6-78DB6F60F817}.Debug FB2K|x86.ActiveCfg = Debug|Win32
-		{85FBFD09-0099-4FE9-9DB6-78DB6F60F817}.Debug FB2K|x86.Build.0 = Debug|Win32
-		{85FBFD09-0099-4FE9-9DB6-78DB6F60F817}.Debug|x86.ActiveCfg = Debug|Win32
-		{85FBFD09-0099-4FE9-9DB6-78DB6F60F817}.Debug|x86.Build.0 = Debug|Win32
-		{85FBFD09-0099-4FE9-9DB6-78DB6F60F817}.Release FB2K|x86.ActiveCfg = Release|Win32
-		{85FBFD09-0099-4FE9-9DB6-78DB6F60F817}.Release FB2K|x86.Build.0 = Release|Win32
-		{85FBFD09-0099-4FE9-9DB6-78DB6F60F817}.Release|x86.ActiveCfg = Release|Win32
-		{85FBFD09-0099-4FE9-9DB6-78DB6F60F817}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,7 +97,6 @@ Global
 		{71AD2674-065B-48F5-B8B0-E1F9D3892081} = {69CD651A-85E1-44DD-832E-1F5B224D2004}
 		{EE47764E-A202-4F85-A767-ABDAB4AFF35F} = {69CD651A-85E1-44DD-832E-1F5B224D2004}
 		{E8091321-D79D-4575-86EF-064EA1A4A20D} = {69CD651A-85E1-44DD-832E-1F5B224D2004}
-		{85FBFD09-0099-4FE9-9DB6-78DB6F60F817} = {69CD651A-85E1-44DD-832E-1F5B224D2004}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E5205AF8-F576-4B04-81CE-5D90A44D4213}
