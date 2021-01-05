@@ -15,10 +15,16 @@ steps:
     msbuildVersion: '15.0'
     configuration: 'Release'
 
+- task: CopyFiles@2
+  inputs:
+    sourceFolder: 'Release'
+    contents: 'foo_listenbrainz.dll'
+    targetFolder: '$(Build.ArtifactStagingDirectory)/Release'
+
 - task: ArchiveFiles@2
   displayName: 'Archive artifact'
   inputs:
-    rootFolderOrFile: 'Release'
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/Release'
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/foo_listenbrainz.fb2k-component'
