@@ -1,3 +1,5 @@
+name: foo_listenbrainz_$(Build.BuildId)
+
 trigger:
 - master
 
@@ -9,13 +11,32 @@ steps:
   submodules: recursive
 
 - task: MSBuild@1
+  displayName: 'Build solution'
   inputs:
     solution: 'foo_listenbrainz.sln'
     msbuildVersion: '15.0'
     configuration: 'Release'
 
-- task: PublishBuildArtifacts@1
+- task: ArchiveFiles@2
+  displayName: 'Archive artifact'
   inputs:
-    PathtoPublish: 'Release/foo_listenbrainz.dll'
-    ArtifactName: 'foo_listenbrainz.dll'
-    publishLocation: 'Container'
+    rootFolderOrFile: 'Release'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/foo_listenbrainz.fb2k-component'
+    replaceExistingArchive: true 
+
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish artifact'
+  inputs:
+    TargetPath: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: foo_listenbrainz.fb2k-component
+
+- task: GitHubRelease@0
+  inputs:
+    gitHubConnection: medvid
+    repositoryName: '$(Build.Repository.Name)' 
+    tagSource: manual
+    tag: $(Build.BuildNumber)
+    assets: |
+      $(Build.ArtifactStagingDirectory)/foo_listenbrainz.fb2k-component
